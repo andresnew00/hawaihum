@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawaiian Humane Society — Join the Aloha 'Ohana Monthly Giving Circle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #1A5276;
+    --teal: #0E8A8A;
+    --coral: #E8634A;
+    --sand: #F5EFE6;
+    --leaf: #2D7A4F;
+    --midnight: #0D2137;
+    --warm-white: #FDFAF6;
+    --soft-gray: #6B7280;
+    --gold: #D4A843;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--midnight);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(13, 33, 55, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logo-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    line-height: 1.2;
+  }
+
+  .logo-text span {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 28px;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--coral) !important;
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: #c84f38 !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?w=1600&q=80');
+    background-size: cover;
+    background-position: center 30%;
+    transform: scale(1.05);
+    animation: heroZoom 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to   { transform: scale(1.12); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+      rgba(13,33,55,0.88) 0%,
+      rgba(26,82,118,0.72) 50%,
+      rgba(14,138,138,0.45) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+    animation: fadeUp 1s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,168,67,0.2);
+    border: 1px solid rgba(212,168,67,0.5);
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 22px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.65;
+    max-width: 580px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--coral);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 16px 38px;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 6px 24px rgba(232,99,74,0.4);
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: #c84f38;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(232,99,74,0.5);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateY(-2px);
+  }
+
+  .vsl-placeholder {
+    position: relative;
+    margin: 48px auto 0;
+    max-width: 620px;
+    background: rgba(0,0,0,0.4);
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 12px;
+    padding: 36px;
+    text-align: center;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+  }
+
+  .vsl-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--midnight);
+    padding: 44px 40px;
+  }
+
+  .stats-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  .stat-item.visible { opacity: 1; transform: translateY(0); }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* ── PAIN POINTS ── */
+  .pain {
+    padding: 90px 40px;
+    background: var(--sand);
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-heading {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--midnight);
+    margin-bottom: 20px;
+  }
+
+  .pain-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .pain-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    border-left: 5px solid var(--coral);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+  }
+  .pain-card.visible { opacity: 1; transform: translateX(0); }
+
+  .pain-card p {
+    font-size: 0.97rem;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .pain-bridge {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #374151;
+    font-weight: 300;
+  }
+
+  /* ── WHY US ── */
+  .why {
+    padding: 90px 40px;
+    background: white;
+  }
+
+  .why-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .why-mission {
+    max-width: 680px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #374151;
+    font-weight: 300;
+  }
+
+  .credibility-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+
+  .cred-badge {
+    background: var(--sand);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ocean);
+    border: 1px solid rgba(26,82,118,0.15);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  .testimonial-card {
+    background: var(--sand);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  .testimonial-card.visible { opacity: 1; transform: translateY(0); }
+
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Fraunces', serif;
+    font-size: 5rem;
+    color: var(--teal);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 0.97rem;
+    line-height: 1.65;
+    color: #374151;
+    font-style: italic;
+    margin-bottom: 16px;
+    padding-top: 24px;
+  }
+
+  .testimonial-author {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ocean);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 3 STEPS ── */
+  .steps {
+    padding: 90px 40px;
+    background: var(--ocean);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(14,138,138,0.15);
+  }
+
+  .steps::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(212,168,67,0.1);
+  }
+
+  .steps-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .steps .section-heading { color: white; }
+  .steps .section-label { color: var(--gold); }
+
+  .steps-sub {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    margin-bottom: 50px;
+    font-weight: 300;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .step-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.6s ease;
+  }
+  .step-card.visible { opacity: 1; transform: translateY(0); }
+  .step-card:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-4px);
+  }
+
+  .step-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto 20px;
+  }
+
+  .step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .step-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── COMMUNITY ── */
+  .community {
+    padding: 90px 40px;
+    background: var(--warm-white);
+  }
+
+  .community-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .community-header {
+    text-align: center;
+    margin-bottom: 54px;
+  }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .tier-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  .tier-card.visible { opacity: 1; transform: translateY(0); }
+  .tier-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.14); }
+
+  .tier-header {
+    padding: 28px 28px 22px;
+    text-align: center;
+  }
+
+  .tier-card:nth-child(1) .tier-header { background: var(--teal); }
+  .tier-card:nth-child(2) .tier-header { background: var(--ocean); }
+  .tier-card:nth-child(3) .tier-header { background: var(--midnight); }
+
+  .tier-emoji { font-size: 2.2rem; margin-bottom: 10px; }
+
+  .tier-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .tier-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: 'Fraunces', serif;
+  }
+
+  .tier-price span {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .tier-body {
+    background: white;
+    padding: 26px 28px;
+  }
+
+  .tier-tagline {
+    font-size: 0.9rem;
+    color: var(--soft-gray);
+    font-style: italic;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  .tier-perks {
+    list-style: none;
+  }
+
+  .tier-perks li {
+    font-size: 0.88rem;
+    color: #374151;
+    padding: 7px 0;
+    border-bottom: 1px solid #F3F4F6;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+  .tier-perks li:last-child { border-bottom: none; }
+
+  .perk-check {
+    color: var(--leaf);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── DONATION FORM ── */
+  .donation {
+    padding: 90px 40px;
+    background: linear-gradient(135deg, var(--teal), var(--ocean));
+    text-align: center;
+  }
+
+  .donation .section-heading { color: white; }
+  .donation .section-label { color: var(--gold); }
+
+  .form-headline {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 36px;
+    font-weight: 300;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .amount-grid {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .amount-btn {
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .amount-btn:hover, .amount-btn.active {
+    background: var(--coral);
+    border-color: var(--coral);
+    transform: translateY(-2px);
+  }
+
+  .amount-note {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+  }
+
+  .donate-cta {
+    display: inline-block;
+    background: white;
+    color: var(--ocean);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 18px 52px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+  }
+
+  .donate-cta:hover {
+    transform: translateY(-3px);
+    animation: none;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.3);
+  }
+
+  .tax-note {
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── FAQs ── */
+  .faqs {
+    padding: 90px 40px;
+    background: var(--sand);
+  }
+
+  .faqs-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faqs-header { text-align: center; margin-bottom: 48px; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 22px 0;
+  }
+
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 16px;
+  }
+
+  .faq-q-text {
+    font-weight: 600;
+    font-size: 0.97rem;
+    color: var(--midnight);
+    line-height: 1.4;
+  }
+
+  .faq-icon {
+    font-size: 1.3rem;
+    color: var(--teal);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 0.92rem;
+    color: #4B5563;
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding-top: 14px;
+  }
+
+  /* ── EMAIL OPT-IN ── */
+  .optin {
+    padding: 80px 40px;
+    background: white;
+    text-align: center;
+  }
+
+  .optin .section-heading {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+
+  .optin-sub {
+    color: var(--soft-gray);
+    font-size: 1rem;
+    margin: 14px auto 32px;
+    max-width: 480px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .optin-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .optin-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 14px 22px;
+    border: 2px solid #E5E7EB;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .optin-input:focus { border-color: var(--teal); }
+
+  .optin-btn {
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .optin-btn:hover { background: var(--ocean); transform: translateY(-1px); }
+
+  .unsub-note {
+    margin-top: 12px;
+    font-size: 0.78rem;
+    color: #9CA3AF;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--midnight);
+    padding: 52px 40px 32px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    margin-top: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-col h4 {
+    font-weight: 600;
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-tax {
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    header { padding: 14px 20px; }
+    nav a:not(.nav-cta) { display: none; }
+    .hero-content { padding: 0 20px; }
+    .pain-inner { grid-template-columns: 1fr; gap: 32px; }
+    .stats-inner { grid-template-columns: 2fr 2fr; gap: 28px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .tier-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .pain, .why, .steps, .community, .donation, .faqs, .optin { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="https://www.hawaiianhumane.org" class="logo-wrap">
+    <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" r="22" fill="#0E8A8A"/>
+      <path d="M22 10 C16 10 12 14 12 19 C12 25 22 34 22 34 C22 34 32 25 32 19 C32 14 28 10 22 10Z" fill="white" opacity="0.9"/>
+      <circle cx="18" cy="17" r="2.5" fill="#E8634A"/>
+      <circle cx="26" cy="17" r="2.5" fill="#E8634A"/>
+      <path d="M19 22 Q22 25 25 22" stroke="#1A5276" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <div class="logo-text">
+      Hawaiian Humane
+      <span>Society</span>
+    </div>
+  </a>
+  <nav>
+    <a href="https://www.hawaiianhumane.org/adoptions/">Adopt</a>
+    <a href="https://www.hawaiianhumane.org/volunteer-with-us/">Volunteer</a>
+    <a href="https://www.hawaiianhumane.org/donate/" class="nav-cta">Give Monthly</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Oahu's Lifesaving Animal Welfare Organization Since 1883</div>
+    <h1>Over <em>7,600 pets</em> found loving homes last year. Your $15 a month keeps that number growing.</h1>
+    <p class="hero-sub">Join the Aloha 'Ohana — Hawaiian Humane's monthly giving circle. Set it once. Save animals all year. Cancel anytime.</p>
+    <div class="hero-actions">
+      <a href="#donate" class="btn-primary">Join the Aloha 'Ohana</a>
+      <a href="#steps" class="btn-secondary">See how it works</a>
+    </div>
+    <div class="vsl-placeholder">
+      <div class="vsl-icon">▶</div>
+      <strong style="color:white;display:block;margin-bottom:6px;">VSL PLACEHOLDER</strong>
+      Your 60–90 second intro video goes here. Show the animals, the team, the impact. Make it real.
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">7,600+</div>
+      <div class="stat-label">Pets rehomed last year</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12,400+</div>
+      <div class="stat-label">Spay/neuter surgeries performed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">52,100+</div>
+      <div class="stat-label">Lbs of pet food distributed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">140+</div>
+      <div class="stat-label">Years serving Oahu</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="pain-inner">
+    <div>
+      <span class="section-label">The Problem on Oahu</span>
+      <h2 class="section-heading">Thousands of animals need help. The work never stops.</h2>
+      <p class="pain-bridge">Oahu is a beautiful island. But every week, 400 to 600 animals arrive at Hawaiian Humane needing medical care, shelter, and a second chance. Behind every statistic is a dog who was lost, a litter of kittens with no mother, or a family that needed help keeping their pet during a hard season. Without consistent funding, programs get cut. Animals wait longer. Families fall through the cracks.</p>
+    </div>
+    <div>
+      <div class="pain-card">
+        <p>Hundreds of animals arrive at Hawaiian Humane every single week, each needing food, shelter, and veterinary care before they can find a home.</p>
+      </div>
+      <div class="pain-card">
+        <p>One-time donations help, but they create uncertainty. Monthly donors are what let the team plan, hire, and show up every single day without interruption.</p>
+      </div>
+      <div class="pain-card">
+        <p>Without spay/neuter access for low-income families, pet overpopulation compounds year after year. Your monthly gift funds the surgeries that break that cycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US + SOCIAL PROOF -->
+<section class="why">
+  <div class="why-inner">
+    <span class="section-label">Why Hawaiian Humane</span>
+    <h2 class="section-heading">Oahu's most trusted animal welfare organization</h2>
+    <p class="why-mission">Founded in 1883 by 350 concerned citizens and King Kalakaua himself, Hawaiian Humane is one of the oldest humane societies in the nation. We are not a chapter of any national group. Every dollar you give stays in Hawaii, helping the animals and people of Oahu. Today, 30+ programs and services cover the full range of animal welfare needs: adoptions, foster care, spay/neuter, cruelty investigations, pet food assistance, education, and disaster response.</p>
+
+    <div class="credibility-row">
+      <div class="cred-badge">Charity Navigator Rated</div>
+      <div class="cred-badge">GuideStar Recognized</div>
+      <div class="cred-badge">PetSmart Charities Grantee</div>
+      <div class="cred-badge">Petco Love Partner</div>
+      <div class="cred-badge">Hill's Pet Nutrition Partner</div>
+      <div class="cred-badge">501(c)(3) — EIN 99-0073490</div>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">Hawaiian Humane gave us our dog, Koa. The team walked us through everything. They genuinely care about finding the right match. We will support them forever.</p>
+        <div class="testimonial-author">— Adopter from Kailua, Oahu</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">I foster for the Couch Crashers program. Knowing Hawaiian Humane handles all the vet care while I give temporary love — it makes it easy to say yes every time.</p>
+        <div class="testimonial-author">— Foster volunteer, West Oahu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 STEPS -->
+<section class="steps" id="steps">
+  <div class="steps-inner">
+    <span class="section-label">How It Works</span>
+    <h2 class="section-heading">Three easy steps to lifelong impact</h2>
+    <p class="steps-sub">You choose your amount. We handle everything else. The animals feel it immediately.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Choose Your Amount</div>
+        <p class="step-desc">Pick the monthly gift that fits your life. Even $15 a month provides vaccinations, food, and shelter for an animal in our care. Every level makes a real difference.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Join the Aloha 'Ohana</div>
+        <p class="step-desc">Your recurring gift is set and goes to work immediately. You become part of our inner circle: the people who make this mission possible every single day, not just on good days.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Watch Your Impact Unfold</div>
+        <p class="step-desc">Receive monthly stories, updates, and behind-the-scenes moments from our team. You will see exactly what your gift does. The animals you help have names. You will know them.</p>
+      </div>
+    </div>
+
+    <a href="#donate" class="btn-primary">Yes, I Want to Join</a>
+  </div>
+</section>
+
+<!-- MONTHLY GIVING COMMUNITY / TIERS -->
+<section class="community">
+  <div class="community-inner">
+    <div class="community-header">
+      <span class="section-label">The Aloha 'Ohana</span>
+      <h2 class="section-heading">Pick your place in our circle</h2>
+      <p style="color:var(--soft-gray);font-size:1rem;font-weight:300;max-width:560px;margin:0 auto;line-height:1.65;">Every tier is named for the spirit of caring connection that defines Hawaii. Choose the level that feels right. You can change anytime.</p>
+    </div>
+
+    <div class="tier-grid">
+      <!-- Tier 1 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-emoji">🌺</div>
+          <div class="tier-name">Malama</div>
+          <div class="tier-price">$15 <span>/ month</span></div>
+        </div>
+        <div class="tier-body">
+          <p class="tier-tagline">"To care for." You show up every month. That's everything.</p>
+          <ul class="tier-perks">
+            <li><span class="perk-check">✓</span> Monthly impact email with real animal stories</li>
+            <li><span class="perk-check">✓</span> Name on our digital Aloha 'Ohana donor wall</li>
+            <li><span class="perk-check">✓</span> Exclusive Aloha 'Ohana member updates</li>
+            <li><span class="perk-check">✓</span> Tax receipt delivered automatically</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tier 2 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-emoji">🐾</div>
+          <div class="tier-name">Kuleana</div>
+          <div class="tier-price">$50 <span>/ month</span></div>
+        </div>
+        <div class="tier-body">
+          <p class="tier-tagline">"Responsibility." You feel it in your bones. So do we.</p>
+          <ul class="tier-perks">
+            <li><span class="perk-check">✓</span> Everything in Malama, plus:</li>
+            <li><span class="perk-check">✓</span> Handwritten thank-you note from our team</li>
+            <li><span class="perk-check">✓</span> Quarterly photo of an animal your gift helped</li>
+            <li><span class="perk-check">✓</span> Behind-the-scenes shelter updates</li>
+            <li><span class="perk-check">✓</span> Early access to our annual impact report</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-emoji">🌊</div>
+          <div class="tier-name">Imua</div>
+          <div class="tier-price">$100 <span>/ month</span></div>
+        </div>
+        <div class="tier-body">
+          <p class="tier-tagline">"Move forward together." You are the heart of this mission.</p>
+          <ul class="tier-perks">
+            <li><span class="perk-check">✓</span> Everything in Kuleana, plus:</li>
+            <li><span class="perk-check">✓</span> Hawaiian Humane branded keepsake mailed to you</li>
+            <li><span class="perk-check">✓</span> Personal birthday acknowledgment from our CEO</li>
+            <li><span class="perk-check">✓</span> Invitation to exclusive Imua supporter events</li>
+            <li><span class="perk-check">✓</span> Named recognition in our annual report</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION FORM -->
+<section class="donation" id="donate">
+  <span class="section-label">Give Monthly</span>
+  <h2 class="section-heading">Your gift starts saving lives today</h2>
+  <p class="form-headline">Choose your monthly amount and join the Aloha 'Ohana. Less than a cup of coffee a day. A lifetime of impact for the animals of Oahu.</p>
+
+  <div class="amount-grid">
+    <button class="amount-btn" onclick="setActive(this)">$15/mo</button>
+    <button class="amount-btn active" onclick="setActive(this)">$50/mo</button>
+    <button class="amount-btn" onclick="setActive(this)">$100/mo</button>
+    <button class="amount-btn" onclick="setActive(this)">Other</button>
+  </div>
+
+  <p class="amount-note">Monthly gifts can be paused or canceled anytime. No hassle, no guilt.</p>
+
+  <a href="https://www.hawaiianhumane.org/donate/" class="donate-cta">Join the Aloha 'Ohana</a>
+
+  <p class="tax-note">Hawaiian Humane Society is a 501(c)(3) nonprofit. EIN 99-0073490. All gifts are tax-deductible as allowed by law. Every dollar stays in Hawaii.</p>
+</section>
+
+<!-- FAQs -->
+<section class="faqs">
+  <div class="faqs-inner">
+    <div class="faqs-header">
+      <span class="section-label">Your Questions, Answered</span>
+      <h2 class="section-heading">We want you to feel completely confident</h2>
+    </div>
+
+    <div id="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How is my monthly donation used?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Your monthly gift directly funds the daily operations of Hawaiian Humane: veterinary care for shelter animals, food and housing, spay/neuter surgeries, humane investigations, and community programs like the Pet Food Bank. We maintain full financial transparency and are recognized by Charity Navigator and GuideStar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can I cancel or change my monthly gift at any time?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes, absolutely. You can pause, reduce, increase, or cancel your monthly gift at any time by contacting us at Giving@HawaiianHumane.org or calling (808) 356-2200. There are no penalties and no guilt trips. We just hope you stay.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is my donation tax-deductible?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes. Hawaiian Humane Society is a registered 501(c)(3) nonprofit organization (EIN 99-0073490). All donations are tax-deductible to the extent permitted by law. You will automatically receive a receipt for every monthly gift for your records.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Does Hawaiian Humane operate as part of any national organization?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">No. We are a fully independent nonprofit. We are not affiliated with the ASPCA, HSUS, or any other national group. Every single dollar you donate stays in Hawaii and benefits the animals and people of Oahu directly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Will I see how my monthly gift is making a difference?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Absolutely. As an Aloha 'Ohana member you will receive monthly impact emails with real stories from the shelter, updates on animals your gift has helped, and behind-the-scenes content from our team. Higher tiers also receive personal photos and exclusive updates.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What happens if I miss a payment?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">If a payment fails, our team will reach out gently to help resolve the issue. We never assume anything and always give donors the benefit of the doubt. Life happens, and we are grateful for any support you can give.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can I give a monthly gift in honor of someone?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes. We love tribute and memorial gifts. You can set up a recurring tribute gift at hawaiianhumane.salsalabs.org/tributegifts and we will notify the recipient or their family of your thoughtful ongoing generosity.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How does Hawaiian Humane handle the animals it receives?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">We are an open admission shelter, which means we accept animals regardless of age, health, or behavior. Every animal receives a physical evaluation, spay/neuter surgery, microchipping, vaccinations, and treatment before being placed for adoption. We have 30+ programs to find the right outcome for every animal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What other ways can I help beyond donating?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Lots of ways. You can foster an animal through our Couch Crashers or Lap Crashers programs, volunteer at one of our two campuses, donate pet food and supplies, advocate for stronger animal welfare laws, or shop our Amazon Wish List. Every action matters.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Does my employer match charitable donations?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Many employers offer matching gift programs that could double or triple your monthly impact. Check with your HR department or search your company's matching gift portal. If you need our EIN or documentation, contact us at Giving@HawaiianHumane.org.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL OPT-IN -->
+<section class="optin">
+  <span class="section-label">Stay Connected</span>
+  <h2 class="section-heading">Not ready to give monthly? Stay in the loop.</h2>
+  <p class="optin-sub">Get real stories from the shelter, animal updates, and ways to help delivered to your inbox. No spam. Just heart.</p>
+  <div class="optin-form">
+    <input type="email" class="optin-input" placeholder="Your email address">
+    <button class="optin-btn">I'm In</button>
+  </div>
+  <p class="unsub-note">Unsubscribe anytime.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text" style="color:white;font-family:'Fraunces',serif;font-size:1.2rem;">Hawaiian Humane Society</div>
+        <p>Promoting the human-animal bond and the humane treatment of all animals on Oahu since 1883. Independent, community-driven, and entirely funded by people like you.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <a href="https://www.hawaiianhumane.org/adoptions/">Adopt a Pet</a>
+        <a href="https://www.hawaiianhumane.org/foster-care/">Foster</a>
+        <a href="https://www.hawaiianhumane.org/volunteer-with-us/">Volunteer</a>
+        <a href="https://www.hawaiianhumane.org/events/">Events</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@hawaiianhumane.org">info@hawaiianhumane.org</a>
+        <a href="tel:8083562200">(808) 356-2200</a>
+        <a href="https://www.hawaiianhumane.org/visit-us/">Visit Us</a>
+        <a href="https://www.hawaiianhumane.org/donate/" style="color:var(--gold);font-weight:600;">Give Monthly</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hawaiian Humane Society. All rights reserved.</span>
+      <span class="footer-tax">501(c)(3) Nonprofit | EIN 99-0073490 | Every dollar stays in Hawaii</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.stat-item, .pain-card, .step-card, .tier-card, .testimonial-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Stagger step cards
+  document.querySelectorAll('.step-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.15}s`;
+  });
+
+  document.querySelectorAll('.tier-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.12}s`;
+  });
+
+  document.querySelectorAll('.stat-item').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Amount button active state
+  function setActive(btn) {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
